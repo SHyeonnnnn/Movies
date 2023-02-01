@@ -20,8 +20,10 @@ const Detail = () => {
     return (
         <div className='movie-detail'>
             {loading ? (
-                <div className='loadings'>
-                    <span className='loading'>데이터 불러오는중...</span>
+                <div class="loader">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                 </div>
                 ) : (
                     <div className='movies'>

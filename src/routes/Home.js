@@ -27,7 +27,11 @@ class Home extends React.Component {
       <section className='container'>
         {
           isLoading ? (
-          <div className='loader'><span className='loader_text'>Loading...</span></div>
+            <div class="loader">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
           ) : ( 
           <div className='movies'>
               {movies.map( movie => (
