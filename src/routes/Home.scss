@@ -1,0 +1,28 @@
+*{margin: 0;padding: 0; box-sizing: border-box;}
+.container{
+    .loader{
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        &_text{font-size: 30px; color: rgb(114, 59, 59); text-shadow: 1px 2px 2px rgba(50,50,93,.25);}
+    }
+    .movies{
+        margin: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+        grid-gap: 100px;
+        padding: 50px;
+        width: 80%;
+        padding-top: 70px;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .container{
+        .movies{
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+    }
+}

@@ -1,25 +1,23 @@
 
 import React from 'react';
+import Home from './routes/Home';
+import Navigation from './component/Navigation';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import About from './routes/About';
+import Detail from './routes/Detail';
 
-class App extends React.Component {
-  state = {
-    isLoading: true,
-    movies: []
-  }//1
 
-  componentDidMount(){//3
-    setTimeout(() => {
-      this.setState({isLoading:false})//isLoading을 false로 만드는데 5초걸려라
-    }, 5000);
-  }
-  render() {//2
-    const {isLoading} = this.state;
-    return (
-      <div>
-        {isLoading ? 'Loading...' : 'We are ready'}
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+     <BrowserRouter>
+        <Navigation/>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/About' element={<About/>}></Route>
+          <Route path='/detail/:id' element={<Detail/>}></Route>
+        </Routes>
+     </BrowserRouter>
+  );
+};
 
 export default App;
